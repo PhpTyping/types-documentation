@@ -1,0 +1,22 @@
+.section > blockquote {
+    background: #f9f9f9;
+    border-left: 7px solid #ccc;
+    margin: 1.5em 7px;
+    padding: 0.5em 7px;
+    /*quotes: "\201C""\201D""\2018""\2019";*/
+}
+
+/*.section > blockquote:before {*/
+/*    color: #ccc;*/
+/*    content: open-quote;*/
+/*    font-size: 2em;*/
+/*    line-height: 0.1em;*/
+/*    margin-right: 0.25em;*/
+/*    vertical-align: -0.4em;*/
+/*}*/
+
+.section > blockquote > p {
+    display: inline;
+    font-size: 0.8rem;
+    color: #747474;
+}
