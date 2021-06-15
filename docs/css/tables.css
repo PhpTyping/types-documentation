@@ -5,17 +5,16 @@ table {
     font-family: sans-serif;
     min-width: 400px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    display: table !important;
 }
 
 thead > tr {
     background-color: #3a4754;
-    width: 100%;
     color: #ffffff;
     text-align: left;
 }
 
 tbody > tr {
-    width: 100%;
     border-bottom: 1px solid #dddddd;
 }
 
