@@ -1,4 +1,6 @@
 # Types
+<img align="right" src="https://raw.githubusercontent.com/TheDevNetwork/Aux/master/images/php-types.png"  alt="Typing/Types Logo" width="150px" />
+
 [![Build Job][github-stable-build-shield]][github stable build]
 [![Integration Job][github-int-build-shield]][github integration build]
 [![Documentation][rtd-doc-shield]][rtd doc link]
@@ -18,8 +20,6 @@
 [![Technical Debt][sonar-debt-shield]][sonar page]
 [![Vulnerabilities][sonar-vul-shield]][sonar page]
 
-<img align="right" src="https://raw.githubusercontent.com/TheDevNetwork/Aux/master/images/php-types.png"  alt="Typing/Types Logo" width="150px" />
-
 Types is a library that provides a collection of useful primitive wrappers, similar to what other languages can do (
 Java, etc). It fixes a few issues some internal functions have, and limits coercion around native PHP functions.
 
@@ -30,8 +30,7 @@ Below you will find information about the specific types, and the interfaces the
 | Class                                   | Type     | Description |
 |-----------------------------------------|----------|-------------|
 | [BooleanObject]                         | bool     | Base wrapper around primitive with some custom logical string keyword mappings.|
-| [Collection]                            | array    | Analogous to Doctrine collections, and implements same interfaces (including Collection interface), but provides **
-Typed Collection** functionality. |
+| [Collection]                            | array    | Analogous to Doctrine collections, and implements same interfaces (including Collection interface), but provides **Typed Collection** functionality. |
 | [FloatObject]                           | float    | Provides mathematics functionality, can use 3 different drivers. |
 | [IntObject]                             | int      | Provides mathematics functionality, can use 3 different drivers.| 
 | [StringObject]                          | string   | Extends Stringy using a multi-language inflector and 3rd party slugifier. |

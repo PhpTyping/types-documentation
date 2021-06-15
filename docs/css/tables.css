@@ -9,17 +9,14 @@ table {
 
 thead > tr {
     background-color: #3a4754;
+    width: 100%;
     color: #ffffff;
     text-align: left;
 }
 
 tbody > tr {
+    width: 100%;
     border-bottom: 1px solid #dddddd;
-}
-
-tbody > tr:hover {
-    background-color: #c0c0c0 !important;
-    color: #000;
 }
 
 tbody > tr:nth-of-type(even) {
