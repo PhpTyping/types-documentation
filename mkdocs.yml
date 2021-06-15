@@ -14,6 +14,7 @@ theme:
   highlightjs: true
   hljs_languages:
     - yaml
+  navigation_depth: 6
 
 nav:
   - Home: 'index.md'

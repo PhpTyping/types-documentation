@@ -29,3 +29,11 @@ tbody > tr:last-of-type {
 th, td {
     padding: 12px 15px;
 }
+
+td > a:visited {
+    color: #2980B9;
+}
+
+td > a:hover {
+    text-decoration: underline;
+}
