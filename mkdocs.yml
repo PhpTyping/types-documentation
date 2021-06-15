@@ -1,33 +1,41 @@
-site_name: <img src="" />
+site_name: Typing / Types
+site_url: https://php-types.readthedocs.io/en/latest/?
+site_author: Victor Passapera
+site_description: Typing/Types documentation
 docs_dir: docs
 site_dir: build/doc/
 repo_url: https://github.com/PhpTyping/Types.git
 use_directory_urls: false
+copyright: "Typing/Types is licensed under the <a href='https://github.com/PhpTyping/types/blob/master/LICENSE'>MIT license</a>"
 
 theme:
-    name: readthedocs
-    nav_style: dark
+  name: readthedocs
+  locale: en
+  highlightjs: true
+  hljs_languages:
+    - yaml
 
 nav:
-    - Home: 'index.md'
-    - Types:
-          - Collection: 'types/collection.md'
-          - DateTime: 'types/date-time.md'
-          - Enum: 'types/enum.md'
-          - BooleanObject: 'types/bool-object.md'
-          - FloatObject: 'types/float-object.md'
-          - IntObject: 'types/int-object.md'
-          - StringObject: 'types/string-object.md'
-    - Contributing:
-          - Guidelines: 'contributing/guidelines.md'
+  - Home: 'index.md'
+  - Types:
+    - BooleanObject: 'types/bool-object.md'
+    - Collection: 'types/collection.md'
+    - DateTime: 'types/date-time.md'
+    - Enum: 'types/enum.md'
+    - FloatObject: 'types/float-object.md'
+    - IntObject: 'types/int-object.md'
+    - StringObject: 'types/string-object.md'
 
 extra_css:
-    - css/blockquotes.css
-    - css/tables.css
-    - css/links.css
+  - css/blockquotes.css
+  - css/links.css
+  - css/tables.css
+  - css/texts.css
+  - css/body.css
 
 markdown_extensions:
-    - toc:
-          permalink: true
-    - sane_lists
-    - admonition
+  - toc:
+     permalink: True
+  - sane_lists
+  - admonition
+  - attr_list

@@ -1,12 +1,16 @@
 # types-documentation
 
-[![Documentation Status](https://readthedocs.org/projects/types-documentation/badge/?version=latest&style=flat-square)](https://types-documentation.readthedocs.io/en/latest/?badge=latest)
+[![Documentation Status][documentation shield]][documentation link]
 [![License][license shield]][packagist page]
 
 This is the documentation repo for php-typing/types.
 
-## License
-This library is released under the MIT license. See the complete license in the [LICENSE](LICENSE) file.
+[Follow this link for the live documentation][documentation link].
 
-[license shield]: https://img.shields.io/packagist/l/typing/types.svg?style=flat-square
+## License
+This library is released under the MIT license. See the complete license in the [LICENSE](docs/license.md) file.
+
+[license shield]: https://img.shields.io/github/license/PhpTyping/types?style=flat-square
 [packagist page]: https://packagist.org/packages/typing/types
+[documentation shield]: https://readthedocs.org/projects/php-types/badge/?version=latest&style=flat-square
+[documentation link]: https://php-types.readthedocs.io/en/latest/?badge=latest

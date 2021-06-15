@@ -1,5 +1,8 @@
 # Enum
 
+!!! danger "PHP 8.1 will have native Enums"
+    PHP 8.1 is introducing native Enum structures and this class may have to be re-implemented or not needed at all.
+
 * Primitive Type: `N/A`
 
 ## Credits
@@ -9,13 +12,11 @@
 </a>
 
 > This is just a meta-class for php-enum.
-> <br/>
 > Documentation: https://github.com/myclabs/php-enum#documentation
-
 
 ## Usage
 
-Usage is the same as a php-enum.
+Usage is the same as base class.
 
 **Example**
 
@@ -40,16 +41,17 @@ final class Status extends Enum
     private const FINISHED = 'finished';
 }
 
-$currentStatus = Status::PENDING();
+...
 
+$currentStatus = Status::PENDING();
 echo $currentStatus; // 'pending'
 
 ```
 
-## Methods
-### Static
-#### getSupported
+> Or in Symfony Validator component attributes
 
-`::getSupported(): array`
-
-Alias for `::toArray()`
+```php
+    #[Assert\NotBlank(message: 'A status is required.')]
+    #[Assert\Choice(callback: [Status::class, 'toArray'])]
+    private string $status;
+```

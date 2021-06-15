@@ -4,8 +4,8 @@
 
 ## Usage
 
-Provides a specific map of strings that can map to boolean. This is useful when dealing with
-classes that provide boolean values as strings, such as Symfony's Command and QueryParam components.
+Provides a specific map of strings that can map to boolean. This is useful when dealing with classes that provide
+boolean values as strings, such as Symfony's Command and QueryParam components.
 
 **Example**
 
@@ -45,45 +45,116 @@ public const STRING_MAP = [
 
 ### Instance
 
+---
+
 #### isTrue
-`isTrue(): bool`
 
 Returns `true` when the current value is identical to `true`.
 
-#### isFalse
+`isTrue(): bool`
 
-`isFalse(): bool`
+**Usage**:
+
+```php
+$isMyBool = new BoolObject(true);
+assert($isMyBool->isTrue()); // true
+```
+
+---
+
+#### isFalse
 
 Returns `true` when the current value is identical to `false`.
 
+`isFalse(): bool`
+
+**Usage**:
+
+```php
+$isMyBool = new BoolObject(true);
+assert($isMyBool->isFalse()); // false
+```
+
+---
 
 #### getScalarValue
 
+Returns the current scalar value `true` or `false`.
+
 `getScalarValue(): bool`
 
-Returns the current scalar value `true` or `false`.
+**Usage**:
+
+```php
+$isMyBool = new BoolObject(true);
+assert(true === $isMyBool->getScalarValue()); // true
+```
+
+---
 
 #### toString
 
+Returns the current scalar value as a string (`'true'`, or `'false'`).
+
 `toString(): string`
 
-Returns the current scalar value as a string (`'true'`, or `'false'`).
+**Usage**:
+
+```php
+$isMyBool = new BoolObject(true);
+assert('true' === $isMyBool->toString()); // true
+```
+
+---
 
 #### toInt
 
+Returns `1` for `true` and `0` for `false`.
+
 `toInt(): int`
 
-Returns `1` for `true` and `0` for `false`.
+**Usage**:
+
+```php
+$isMyBool = new BoolObject(true);
+assert(1 === $isMyBool->toInt()); // true
+```
+
+---
 
 ### Static
 
+---
+
 #### box
+
+Boxes a given variable to FloatObject instances.
+
 `::box(mixed &$pointer)`
 
-Boxes a given variable to BoolObject instances.
+**Usage**:
+
+```php
+$isMyBool = new BoolObject(true);
+BoolObject::box($isMyBool);
+assert($isMyBool instanceof BoolObject); // true
+$isMyBool = 'uhoh'; // TypeError
+```
+
+---
 
 #### fromPrimitive
 
-`::fromPrimitive(string|bool $primitive)`
+Attempts to create a BoolObject from a primitive value.
 
-Returns a BooleanObject from a primitive scalar.
+`::fromPrimitive(mixed $mixed): BoolObject`
+
+**Usage**:
+
+```php
+$isMyBool = BoolObject::fromPrimitive('on');
+assert($isMyBool instanceof FloatObject); // true
+assert($isMyBool->isTrue()); // true
+```
+
+---

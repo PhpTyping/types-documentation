@@ -32,8 +32,43 @@ assert($myDate instanceof DateTime); // True
 ```
 
 ## Methods
+
 ### Static
+
+---
+
 #### box
+
+Boxes a given variable to a DateTime instance.
+
 `::box(mixed &$pointer)`
 
-Boxes a given variable to BoolObjects.
+**Usage**:
+
+```php
+use Typing\Type\DateTime;
+
+$date = new DateTime();
+DateTime::box($date);
+$date = '2021-01-05';
+assert($date instanceof DateTime); // true
+$date = false; // TypeError
+```
+
+---
+
+#### fromPrimitive
+
+Attempts to create a DateTime from a primitive value.
+
+`::fromPrimitive(mixed $mixed): Collection`
+
+**Usage**:
+
+```php
+$date = DateTime::fromPrimitive('2021-01-01');
+assert($date instanceof DateTime); // true
+$date = DateTime::fromPrimitive(111); // TypeError
+```
+
+---
