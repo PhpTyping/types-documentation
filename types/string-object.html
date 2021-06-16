@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Victor Passapera">
+  <link rel="canonical" href="https://php-types.readthedocs.io/en/latest/types/string-object.html">
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>StringObject - Typing / Types</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  <link href="../css/blockquotes.css" rel="stylesheet" />
+  <link href="../css/links.css" rel="stylesheet" />
+  <link href="../css/tables.css" rel="stylesheet" />
+  <link href="../css/texts.css" rel="stylesheet" />
+  <link href="../css/body.css" rel="stylesheet" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "StringObject";
+    var mkdocs_page_input_path = "types/string-object.md";
+    var mkdocs_page_url = "/en/latest/types/string-object.html";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../index.html" class="icon icon-home"> Typing / Types</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../index.html">Home</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Types</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="bool-object.html">BooleanObject</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="collection.html">Collection</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="date-time.html">DateTime</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="enum.html">Enum</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="float-object.html">FloatObject</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="int-object.html">IntObject</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="string-object.html">StringObject</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#credits">Credits</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#methods">Methods</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#instance">Instance</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#append">append</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#at">at</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#between">between</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#chars">chars</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#collapsewhitespace">collapseWhitespace</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#contains">contains</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#containsall">containsAll</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#containsany">containsAny</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#count">count</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#countsubstr">countSubstr</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#dasherize">dasherize</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#delimit">delimit</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#endswith">endsWith</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#endswithany">endsWithAny</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#ensureleft">ensureLeft</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#ensureright">ensureRight</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#first">first</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#getencoding">getEncoding</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#getiterator">getIterator</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#haslowercase">hasLowerCase</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#hasuppercase">hasUpperCase</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#htmldecode">htmlDecode</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#htmlencode">htmlEncode</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#humanize">humanize</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#indexof">indexOf</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#indexoflast">indexOfLast</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#insert">insert</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#isalpha">isAlpha</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#isalphanumeric">isAlphanumeric</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#isblank">isBlank</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#ishexadecimal">isHexadecimal</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#isjson">isJson</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#islowercase">isLowerCase</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#isserialized">isSerialized</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#isbase64">isBase64</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#isuppercase">isUpperCase</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#last">last</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#length">length</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#longestcommonprefix">longestCommonPrefix</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#longestcommonsuffix">longestCommonSuffix</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#longestcommonsubstring">longestCommonSubstring</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#lowercasefirst">lowerCaseFirst</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#offsetexists">offsetExists</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#offsetget">offsetGet</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#offsetset">offsetSet</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#offsetunset">offsetUnset</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#pad">pad</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#padboth">padBoth</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#padleft">padLeft</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#padright">padRight</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#prepend">prepend</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#regexreplace">regexReplace</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#removeleft">removeLeft</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#removeright">removeRight</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#repeat">repeat</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#replace">replace</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#reverse">reverse</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#safetruncate">safeTruncate</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#shuffle">shuffle</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#startswith">startsWith</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#startswithany">startsWithAny</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#slice">slice</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#split">split</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#lines">lines</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#stripwhitespace">stripWhitespace</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#substr">substr</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#surround">surround</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#swapcase">swapCase</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#tidy">tidy</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#titleize">titleize</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#toascii">toAscii</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#tolowercase">toLowerCase</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#tospaces">toSpaces</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#totabs">toTabs</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#totitlecase">toTitleCase</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#touppercase">toUpperCase</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#trim">trim</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#trimleft">trimLeft</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#trimright">trimRight</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#truncate">truncate</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#underscored">underscored</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#uppercasefirst">upperCaseFirst</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#__tostring">__toString</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#getscalarvalue">getScalarValue</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#explode">explode</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#isempty">isEmpty</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#slugify">slugify</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#normalize">normalize</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#urlize">urlize</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#classify">classify</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#uppercamelize">upperCamelize</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#tableize">tableize</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#capitilize">capitilize</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#camelize">camelize</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#pluralize">pluralize</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#singularize">singularize</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#strpos">strpos</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#strrpos">strrpos</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#issemver">isSemVer</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#todatetime">toDateTime</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#substruntil">subStrUntil</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#substrafter">subStrAfter</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#toarray">toArray</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#tocollection">toCollection</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#toint">toInt</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#tointobject">toIntObject</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#tobool">toBool</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#toboolobject">toBoolObject</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#static">Static</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#box">box</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#create">create</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#fromprimitive">fromPrimitive</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Typing / Types</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Types &raquo;</li>
+        
+      
+    
+    <li>StringObject</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/PhpTyping/types-documentation/edit/main/docs/types/string-object.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="stringobject">StringObject<a class="headerlink" href="#stringobject" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Primitive Type: <code>string</code></li>
+</ul>
+<h2 id="credits">Credits<a class="headerlink" href="#credits" title="Permanent link">&para;</a></h2>
+<p><a href="https://github.com/doctrine/inflector">
+  <img src="https://raw.githubusercontent.com/TheDevNetwork/Aux/master/images/doctrine-logo.png" alt="Doctrine Collections & Doctrine Inflector" width="110px" />
+</a></p>
+<blockquote>
+<p>Doctrine/Inflector is used for inflection related methods</p>
+</blockquote>
+<p><a href="https://github.com/danielstjules/Stringy">
+  <img src="https://raw.githubusercontent.com/TheDevNetwork/Aux/master/images/stringy.png" alt="Stringy" width="160px" />
+</a></p>
+<blockquote>
+<p>While Stringy is no longer maintained, the base class is pulled
+into our repo as an abstract class to maintain as a permanent fork.</p>
+</blockquote>
+<p><a href="https://github.com/cocur/slugify">
+  <img src="https://raw.githubusercontent.com/TheDevNetwork/Aux/master/images/slug.png" alt="Slugify" style="max-height: 90px;" />
+</a></p>
+<blockquote>
+<p>cocur/slugify is used for Slugifying strings.</p>
+</blockquote>
+<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
+<p>Provides an interface for a string operations. Multibyte support.</p>
+<p><strong>Example</strong></p>
+<pre><code class="language-php">use Typing\Type\StringObject;
+
+
+$string = new StringObject('');
+</code></pre>
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
+<h3 id="instance">Instance<a class="headerlink" href="#instance" title="Permanent link">&para;</a></h3>
+<h4 id="append">append<a class="headerlink" href="#append" title="Permanent link">&para;</a></h4>
+<h4 id="at">at<a class="headerlink" href="#at" title="Permanent link">&para;</a></h4>
+<h4 id="between">between<a class="headerlink" href="#between" title="Permanent link">&para;</a></h4>
+<h4 id="chars">chars<a class="headerlink" href="#chars" title="Permanent link">&para;</a></h4>
+<h4 id="collapsewhitespace">collapseWhitespace<a class="headerlink" href="#collapsewhitespace" title="Permanent link">&para;</a></h4>
+<h4 id="contains">contains<a class="headerlink" href="#contains" title="Permanent link">&para;</a></h4>
+<h4 id="containsall">containsAll<a class="headerlink" href="#containsall" title="Permanent link">&para;</a></h4>
+<h4 id="containsany">containsAny<a class="headerlink" href="#containsany" title="Permanent link">&para;</a></h4>
+<h4 id="count">count<a class="headerlink" href="#count" title="Permanent link">&para;</a></h4>
+<h4 id="countsubstr">countSubstr<a class="headerlink" href="#countsubstr" title="Permanent link">&para;</a></h4>
+<h4 id="dasherize">dasherize<a class="headerlink" href="#dasherize" title="Permanent link">&para;</a></h4>
+<h4 id="delimit">delimit<a class="headerlink" href="#delimit" title="Permanent link">&para;</a></h4>
+<h4 id="endswith">endsWith<a class="headerlink" href="#endswith" title="Permanent link">&para;</a></h4>
+<h4 id="endswithany">endsWithAny<a class="headerlink" href="#endswithany" title="Permanent link">&para;</a></h4>
+<h4 id="ensureleft">ensureLeft<a class="headerlink" href="#ensureleft" title="Permanent link">&para;</a></h4>
+<h4 id="ensureright">ensureRight<a class="headerlink" href="#ensureright" title="Permanent link">&para;</a></h4>
+<h4 id="first">first<a class="headerlink" href="#first" title="Permanent link">&para;</a></h4>
+<h4 id="getencoding">getEncoding<a class="headerlink" href="#getencoding" title="Permanent link">&para;</a></h4>
+<h4 id="getiterator">getIterator<a class="headerlink" href="#getiterator" title="Permanent link">&para;</a></h4>
+<h4 id="haslowercase">hasLowerCase<a class="headerlink" href="#haslowercase" title="Permanent link">&para;</a></h4>
+<h4 id="hasuppercase">hasUpperCase<a class="headerlink" href="#hasuppercase" title="Permanent link">&para;</a></h4>
+<h4 id="htmldecode">htmlDecode<a class="headerlink" href="#htmldecode" title="Permanent link">&para;</a></h4>
+<h4 id="htmlencode">htmlEncode<a class="headerlink" href="#htmlencode" title="Permanent link">&para;</a></h4>
+<h4 id="humanize">humanize<a class="headerlink" href="#humanize" title="Permanent link">&para;</a></h4>
+<h4 id="indexof">indexOf<a class="headerlink" href="#indexof" title="Permanent link">&para;</a></h4>
+<h4 id="indexoflast">indexOfLast<a class="headerlink" href="#indexoflast" title="Permanent link">&para;</a></h4>
+<h4 id="insert">insert<a class="headerlink" href="#insert" title="Permanent link">&para;</a></h4>
+<h4 id="isalpha">isAlpha<a class="headerlink" href="#isalpha" title="Permanent link">&para;</a></h4>
+<h4 id="isalphanumeric">isAlphanumeric<a class="headerlink" href="#isalphanumeric" title="Permanent link">&para;</a></h4>
+<h4 id="isblank">isBlank<a class="headerlink" href="#isblank" title="Permanent link">&para;</a></h4>
+<h4 id="ishexadecimal">isHexadecimal<a class="headerlink" href="#ishexadecimal" title="Permanent link">&para;</a></h4>
+<h4 id="isjson">isJson<a class="headerlink" href="#isjson" title="Permanent link">&para;</a></h4>
+<h4 id="islowercase">isLowerCase<a class="headerlink" href="#islowercase" title="Permanent link">&para;</a></h4>
+<h4 id="isserialized">isSerialized<a class="headerlink" href="#isserialized" title="Permanent link">&para;</a></h4>
+<h4 id="isbase64">isBase64<a class="headerlink" href="#isbase64" title="Permanent link">&para;</a></h4>
+<h4 id="isuppercase">isUpperCase<a class="headerlink" href="#isuppercase" title="Permanent link">&para;</a></h4>
+<h4 id="last">last<a class="headerlink" href="#last" title="Permanent link">&para;</a></h4>
+<h4 id="length">length<a class="headerlink" href="#length" title="Permanent link">&para;</a></h4>
+<h4 id="longestcommonprefix">longestCommonPrefix<a class="headerlink" href="#longestcommonprefix" title="Permanent link">&para;</a></h4>
+<h4 id="longestcommonsuffix">longestCommonSuffix<a class="headerlink" href="#longestcommonsuffix" title="Permanent link">&para;</a></h4>
+<h4 id="longestcommonsubstring">longestCommonSubstring<a class="headerlink" href="#longestcommonsubstring" title="Permanent link">&para;</a></h4>
+<h4 id="lowercasefirst">lowerCaseFirst<a class="headerlink" href="#lowercasefirst" title="Permanent link">&para;</a></h4>
+<h4 id="offsetexists">offsetExists<a class="headerlink" href="#offsetexists" title="Permanent link">&para;</a></h4>
+<h4 id="offsetget">offsetGet<a class="headerlink" href="#offsetget" title="Permanent link">&para;</a></h4>
+<h4 id="offsetset">offsetSet<a class="headerlink" href="#offsetset" title="Permanent link">&para;</a></h4>
+<h4 id="offsetunset">offsetUnset<a class="headerlink" href="#offsetunset" title="Permanent link">&para;</a></h4>
+<h4 id="pad">pad<a class="headerlink" href="#pad" title="Permanent link">&para;</a></h4>
+<h4 id="padboth">padBoth<a class="headerlink" href="#padboth" title="Permanent link">&para;</a></h4>
+<h4 id="padleft">padLeft<a class="headerlink" href="#padleft" title="Permanent link">&para;</a></h4>
+<h4 id="padright">padRight<a class="headerlink" href="#padright" title="Permanent link">&para;</a></h4>
+<h4 id="prepend">prepend<a class="headerlink" href="#prepend" title="Permanent link">&para;</a></h4>
+<h4 id="regexreplace">regexReplace<a class="headerlink" href="#regexreplace" title="Permanent link">&para;</a></h4>
+<h4 id="removeleft">removeLeft<a class="headerlink" href="#removeleft" title="Permanent link">&para;</a></h4>
+<h4 id="removeright">removeRight<a class="headerlink" href="#removeright" title="Permanent link">&para;</a></h4>
+<h4 id="repeat">repeat<a class="headerlink" href="#repeat" title="Permanent link">&para;</a></h4>
+<h4 id="replace">replace<a class="headerlink" href="#replace" title="Permanent link">&para;</a></h4>
+<h4 id="reverse">reverse<a class="headerlink" href="#reverse" title="Permanent link">&para;</a></h4>
+<h4 id="safetruncate">safeTruncate<a class="headerlink" href="#safetruncate" title="Permanent link">&para;</a></h4>
+<h4 id="shuffle">shuffle<a class="headerlink" href="#shuffle" title="Permanent link">&para;</a></h4>
+<h4 id="startswith">startsWith<a class="headerlink" href="#startswith" title="Permanent link">&para;</a></h4>
+<h4 id="startswithany">startsWithAny<a class="headerlink" href="#startswithany" title="Permanent link">&para;</a></h4>
+<h4 id="slice">slice<a class="headerlink" href="#slice" title="Permanent link">&para;</a></h4>
+<h4 id="split">split<a class="headerlink" href="#split" title="Permanent link">&para;</a></h4>
+<h4 id="lines">lines<a class="headerlink" href="#lines" title="Permanent link">&para;</a></h4>
+<h4 id="stripwhitespace">stripWhitespace<a class="headerlink" href="#stripwhitespace" title="Permanent link">&para;</a></h4>
+<h4 id="substr">substr<a class="headerlink" href="#substr" title="Permanent link">&para;</a></h4>
+<h4 id="surround">surround<a class="headerlink" href="#surround" title="Permanent link">&para;</a></h4>
+<h4 id="swapcase">swapCase<a class="headerlink" href="#swapcase" title="Permanent link">&para;</a></h4>
+<h4 id="tidy">tidy<a class="headerlink" href="#tidy" title="Permanent link">&para;</a></h4>
+<h4 id="titleize">titleize<a class="headerlink" href="#titleize" title="Permanent link">&para;</a></h4>
+<h4 id="toascii">toAscii<a class="headerlink" href="#toascii" title="Permanent link">&para;</a></h4>
+<h4 id="tolowercase">toLowerCase<a class="headerlink" href="#tolowercase" title="Permanent link">&para;</a></h4>
+<h4 id="tospaces">toSpaces<a class="headerlink" href="#tospaces" title="Permanent link">&para;</a></h4>
+<h4 id="totabs">toTabs<a class="headerlink" href="#totabs" title="Permanent link">&para;</a></h4>
+<h4 id="totitlecase">toTitleCase<a class="headerlink" href="#totitlecase" title="Permanent link">&para;</a></h4>
+<h4 id="touppercase">toUpperCase<a class="headerlink" href="#touppercase" title="Permanent link">&para;</a></h4>
+<h4 id="trim">trim<a class="headerlink" href="#trim" title="Permanent link">&para;</a></h4>
+<h4 id="trimleft">trimLeft<a class="headerlink" href="#trimleft" title="Permanent link">&para;</a></h4>
+<h4 id="trimright">trimRight<a class="headerlink" href="#trimright" title="Permanent link">&para;</a></h4>
+<h4 id="truncate">truncate<a class="headerlink" href="#truncate" title="Permanent link">&para;</a></h4>
+<h4 id="underscored">underscored<a class="headerlink" href="#underscored" title="Permanent link">&para;</a></h4>
+<h4 id="uppercasefirst">upperCaseFirst<a class="headerlink" href="#uppercasefirst" title="Permanent link">&para;</a></h4>
+<h4 id="__tostring">__toString<a class="headerlink" href="#__tostring" title="Permanent link">&para;</a></h4>
+<h4 id="getscalarvalue">getScalarValue<a class="headerlink" href="#getscalarvalue" title="Permanent link">&para;</a></h4>
+<h4 id="explode">explode<a class="headerlink" href="#explode" title="Permanent link">&para;</a></h4>
+<h4 id="isempty">isEmpty<a class="headerlink" href="#isempty" title="Permanent link">&para;</a></h4>
+<h4 id="slugify">slugify<a class="headerlink" href="#slugify" title="Permanent link">&para;</a></h4>
+<h4 id="normalize">normalize<a class="headerlink" href="#normalize" title="Permanent link">&para;</a></h4>
+<h4 id="urlize">urlize<a class="headerlink" href="#urlize" title="Permanent link">&para;</a></h4>
+<h4 id="classify">classify<a class="headerlink" href="#classify" title="Permanent link">&para;</a></h4>
+<h4 id="uppercamelize">upperCamelize<a class="headerlink" href="#uppercamelize" title="Permanent link">&para;</a></h4>
+<h4 id="tableize">tableize<a class="headerlink" href="#tableize" title="Permanent link">&para;</a></h4>
+<h4 id="capitilize">capitilize<a class="headerlink" href="#capitilize" title="Permanent link">&para;</a></h4>
+<h4 id="camelize">camelize<a class="headerlink" href="#camelize" title="Permanent link">&para;</a></h4>
+<h4 id="pluralize">pluralize<a class="headerlink" href="#pluralize" title="Permanent link">&para;</a></h4>
+<h4 id="singularize">singularize<a class="headerlink" href="#singularize" title="Permanent link">&para;</a></h4>
+<h4 id="strpos">strpos<a class="headerlink" href="#strpos" title="Permanent link">&para;</a></h4>
+<h4 id="strrpos">strrpos<a class="headerlink" href="#strrpos" title="Permanent link">&para;</a></h4>
+<h4 id="issemver">isSemVer<a class="headerlink" href="#issemver" title="Permanent link">&para;</a></h4>
+<h4 id="todatetime">toDateTime<a class="headerlink" href="#todatetime" title="Permanent link">&para;</a></h4>
+<h4 id="substruntil">subStrUntil<a class="headerlink" href="#substruntil" title="Permanent link">&para;</a></h4>
+<h4 id="substrafter">subStrAfter<a class="headerlink" href="#substrafter" title="Permanent link">&para;</a></h4>
+<h4 id="toarray">toArray<a class="headerlink" href="#toarray" title="Permanent link">&para;</a></h4>
+<h4 id="tocollection">toCollection<a class="headerlink" href="#tocollection" title="Permanent link">&para;</a></h4>
+<h4 id="toint">toInt<a class="headerlink" href="#toint" title="Permanent link">&para;</a></h4>
+<h4 id="tointobject">toIntObject<a class="headerlink" href="#tointobject" title="Permanent link">&para;</a></h4>
+<h4 id="tobool">toBool<a class="headerlink" href="#tobool" title="Permanent link">&para;</a></h4>
+<h4 id="toboolobject">toBoolObject<a class="headerlink" href="#toboolobject" title="Permanent link">&para;</a></h4>
+<h3 id="static">Static<a class="headerlink" href="#static" title="Permanent link">&para;</a></h3>
+<h4 id="box">box<a class="headerlink" href="#box" title="Permanent link">&para;</a></h4>
+<h4 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h4>
+<h4 id="fromprimitive">fromPrimitive<a class="headerlink" href="#fromprimitive" title="Permanent link">&para;</a></h4>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="int-object.html" class="btn btn-neutral" title="IntObject"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Typing/Types is licensed under the <a href='https://github.com/PhpTyping/types/blob/master/LICENSE'>MIT license</a></p>
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/PhpTyping/types-documentation/" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="int-object.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

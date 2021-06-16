@@ -1,0 +1,12 @@
+.section > blockquote {
+    background: #f9f9f9;
+    border-left: 7px solid #ccc;
+    margin: 1.5em 7px;
+    padding: 0.5em 7px;
+}
+
+.section > blockquote > p {
+    display: inline;
+    font-size: 0.8rem;
+    color: #747474;
+}

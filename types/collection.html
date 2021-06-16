@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Victor Passapera">
+  <link rel="canonical" href="https://php-types.readthedocs.io/en/latest/types/collection.html">
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Collection - Typing / Types</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  <link href="../css/blockquotes.css" rel="stylesheet" />
+  <link href="../css/links.css" rel="stylesheet" />
+  <link href="../css/tables.css" rel="stylesheet" />
+  <link href="../css/texts.css" rel="stylesheet" />
+  <link href="../css/body.css" rel="stylesheet" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Collection";
+    var mkdocs_page_input_path = "types/collection.md";
+    var mkdocs_page_url = "/en/latest/types/collection.html";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../index.html" class="icon icon-home"> Typing / Types</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../index.html">Home</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Types</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="bool-object.html">BooleanObject</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="collection.html">Collection</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#credits">Credits</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#methods">Methods</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#instance">Instance</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#unshift">unshift</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#first">first</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#last">last</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#isassociative">isAssociative</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#key">key</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#next">next</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#current">current</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#remove">remove</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#removeelement">removeElement</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#offsetexists">offsetExists</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#offsetget">offsetGet</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#offsetset">offsetSet</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#offsetunset">offsetUnset</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#containskey">containsKey</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#contains">contains</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#exists">exists</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#indexof">indexOf</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#get">get</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#getkeys">getKeys</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#getvalues">getValues</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#count">count</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#set">set</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#add">add</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#isempty">isEmpty</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#getiterator">getIterator</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#map">map</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#filter">filter</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#forall">forAll</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#partition">partition</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#clear">clear</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#slice">slice</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#matching">matching</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#unique">unique</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#merge">merge</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#implode">implode</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#toarray">toArray</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#gettype">getType</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#istyped">isTyped</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#isoftype">isOfType</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#hastype">hasType</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#static">Static</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#box">box</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#fromprimitive">fromPrimitive</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="date-time.html">DateTime</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="enum.html">Enum</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="float-object.html">FloatObject</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="int-object.html">IntObject</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="string-object.html">StringObject</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Typing / Types</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Types &raquo;</li>
+        
+      
+    
+    <li>Collection</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/PhpTyping/types-documentation/edit/main/docs/types/collection.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="collection">Collection<a class="headerlink" href="#collection" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Primitive Type: <code>array</code></li>
+</ul>
+<h2 id="credits">Credits<a class="headerlink" href="#credits" title="Permanent link">&para;</a></h2>
+<p><a href="https://github.com/doctrine">
+  <img src="https://raw.githubusercontent.com/TheDevNetwork/Aux/master/images/doctrine-logo.png" alt="Doctrine Collections & Doctrine Inflector" width="100px" />
+</a></p>
+<div class="admonition info">
+<p class="admonition-title">Doctrine Collection Implementation</p>
+<p>This class implements an extended <code>Collection</code> interface, and has extends on the <code>ArrayCollection</code> implementation.</p>
+</div>
+<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
+<p>Provides a wrapper around arrays that exposes most if not all native array functions. Also implements the following
+interfaces:</p>
+<p><strong>Native</strong></p>
+<ul>
+<li><code>Countable</code></li>
+<li><code>IteratorAggregate</code></li>
+<li><code>ArrayAccess</code></li>
+</ul>
+<p><strong>Vendor Library</strong></p>
+<ul>
+<li><code>Doctrine\Common\Collections\Collection</code></li>
+</ul>
+<p><strong>Library</strong></p>
+<ul>
+<li><code>Typing\Type\TypedCollectionInterface</code></li>
+</ul>
+<p><strong>Example</strong></p>
+<pre><code class="language-php">&lt;?php
+
+namespace Foo;
+
+use Doctrine\Common\Collections\Collection as CollectionInterface;
+use Typing\Type\Collection;
+use Typing\Type\TypedCollectionInterface;
+use Typing\Type\StringObject;
+
+
+$typedCollection = new Collection(['foo', 'bar'], StringObject::class); // A collection of StringObjects
+assert($typedCollection instanceof CollectionInterface); // true
+assert($typedCollection instanceof TypedCollectionInterface); // true
+foreach ($typedCollection as $stringObject) {
+    echo $stringObject-&gt;classify(), PHP_EOL;
+    // Prints:
+    // Foo
+    // Bar 
+    assert($stringObject instanceof StringObject); // True
+}
+
+$typedPrimitiveCollection = new Collection([true, false, true], 'string'); // Error
+</code></pre>
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
+<h3 id="instance">Instance<a class="headerlink" href="#instance" title="Permanent link">&para;</a></h3>
+<hr />
+<h4 id="unshift">unshift<a class="headerlink" href="#unshift" title="Permanent link">&para;</a></h4>
+<hr />
+<h4 id="first">first<a class="headerlink" href="#first" title="Permanent link">&para;</a></h4>
+<hr />
+<h4 id="last">last<a class="headerlink" href="#last" title="Permanent link">&para;</a></h4>
+<hr />
+<h4 id="isassociative">isAssociative<a class="headerlink" href="#isassociative" title="Permanent link">&para;</a></h4>
+<hr />
+<h4 id="key">key<a class="headerlink" href="#key" title="Permanent link">&para;</a></h4>
+<hr />
+<h4 id="next">next<a class="headerlink" href="#next" title="Permanent link">&para;</a></h4>
+<hr />
+<h4 id="current">current<a class="headerlink" href="#current" title="Permanent link">&para;</a></h4>
+<hr />
+<h4 id="remove">remove<a class="headerlink" href="#remove" title="Permanent link">&para;</a></h4>
+<hr />
+<h4 id="removeelement">removeElement<a class="headerlink" href="#removeelement" title="Permanent link">&para;</a></h4>
+<hr />
+<h4 id="offsetexists">offsetExists<a class="headerlink" href="#offsetexists" title="Permanent link">&para;</a></h4>
+<hr />
+<h4 id="offsetget">offsetGet<a class="headerlink" href="#offsetget" title="Permanent link">&para;</a></h4>
+<hr />
+<h4 id="offsetset">offsetSet<a class="headerlink" href="#offsetset" title="Permanent link">&para;</a></h4>
+<hr />
+<h4 id="offsetunset">offsetUnset<a class="headerlink" href="#offsetunset" title="Permanent link">&para;</a></h4>
+<hr />
+<h4 id="containskey">containsKey<a class="headerlink" href="#containskey" title="Permanent link">&para;</a></h4>
+<hr />
+<h4 id="contains">contains<a class="headerlink" href="#contains" title="Permanent link">&para;</a></h4>
+<hr />
+<h4 id="exists">exists<a class="headerlink" href="#exists" title="Permanent link">&para;</a></h4>
+<hr />
+<h4 id="indexof">indexOf<a class="headerlink" href="#indexof" title="Permanent link">&para;</a></h4>
+<hr />
+<h4 id="get">get<a class="headerlink" href="#get" title="Permanent link">&para;</a></h4>
+<hr />
+<h4 id="getkeys">getKeys<a class="headerlink" href="#getkeys" title="Permanent link">&para;</a></h4>
+<hr />
+<h4 id="getvalues">getValues<a class="headerlink" href="#getvalues" title="Permanent link">&para;</a></h4>
+<hr />
+<h4 id="count">count<a class="headerlink" href="#count" title="Permanent link">&para;</a></h4>
+<hr />
+<h4 id="set">set<a class="headerlink" href="#set" title="Permanent link">&para;</a></h4>
+<hr />
+<h4 id="add">add<a class="headerlink" href="#add" title="Permanent link">&para;</a></h4>
+<hr />
+<h4 id="isempty">isEmpty<a class="headerlink" href="#isempty" title="Permanent link">&para;</a></h4>
+<hr />
+<h4 id="getiterator">getIterator<a class="headerlink" href="#getiterator" title="Permanent link">&para;</a></h4>
+<hr />
+<h4 id="map">map<a class="headerlink" href="#map" title="Permanent link">&para;</a></h4>
+<hr />
+<h4 id="filter">filter<a class="headerlink" href="#filter" title="Permanent link">&para;</a></h4>
+<hr />
+<h4 id="forall">forAll<a class="headerlink" href="#forall" title="Permanent link">&para;</a></h4>
+<hr />
+<h4 id="partition">partition<a class="headerlink" href="#partition" title="Permanent link">&para;</a></h4>
+<hr />
+<h4 id="clear">clear<a class="headerlink" href="#clear" title="Permanent link">&para;</a></h4>
+<hr />
+<h4 id="slice">slice<a class="headerlink" href="#slice" title="Permanent link">&para;</a></h4>
+<hr />
+<h4 id="matching">matching<a class="headerlink" href="#matching" title="Permanent link">&para;</a></h4>
+<hr />
+<h4 id="unique">unique<a class="headerlink" href="#unique" title="Permanent link">&para;</a></h4>
+<hr />
+<h4 id="merge">merge<a class="headerlink" href="#merge" title="Permanent link">&para;</a></h4>
+<hr />
+<h4 id="implode">implode<a class="headerlink" href="#implode" title="Permanent link">&para;</a></h4>
+<hr />
+<h4 id="toarray">toArray<a class="headerlink" href="#toarray" title="Permanent link">&para;</a></h4>
+<hr />
+<h4 id="gettype">getType<a class="headerlink" href="#gettype" title="Permanent link">&para;</a></h4>
+<hr />
+<h4 id="istyped">isTyped<a class="headerlink" href="#istyped" title="Permanent link">&para;</a></h4>
+<hr />
+<h4 id="isoftype">isOfType<a class="headerlink" href="#isoftype" title="Permanent link">&para;</a></h4>
+<hr />
+<h4 id="hastype">hasType<a class="headerlink" href="#hastype" title="Permanent link">&para;</a></h4>
+<hr />
+<h3 id="static">Static<a class="headerlink" href="#static" title="Permanent link">&para;</a></h3>
+<hr />
+<h4 id="box">box<a class="headerlink" href="#box" title="Permanent link">&para;</a></h4>
+<p>Boxes a given variable to a Collection instance.</p>
+<p>Any value assigned to the boxed variable behaves as PHP normally does, by creating an array and passing that value as
+the first element, except it does to as a collection instead of an array.</p>
+<p><code>::box(mixed &amp;$pointer)</code></p>
+<p><strong>Usage</strong>:</p>
+<pre><code class="language-php">$collection = new Collection([]);
+Collection::box($collection);
+$collection = ['my', 'new', 'collection'];
+assert($collection instanceof Collection); // true
+assert(3 === $collection-&gt;count()); // true
+$collection = new stdClass(); // == new Collection([new stdClass()])
+assert(1 === $collection-&gt;count()); // true
+assert(stdClass::class === $collection-&gt;getType()); // true
+</code></pre>
+<hr />
+<h4 id="fromprimitive">fromPrimitive<a class="headerlink" href="#fromprimitive" title="Permanent link">&para;</a></h4>
+<p>Attempts to create a BoolObject from a primitive value.</p>
+<p><code>::fromPrimitive(mixed $mixed): Collection</code></p>
+<p><strong>Usage</strong>:</p>
+<pre><code class="language-php">$collection = Collection::fromPrimitive('foo');
+assert($collection instanceof Collection); // true
+assert(1 === $collection-&gt;count()); // true
+</code></pre>
+<hr />
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="date-time.html" class="btn btn-neutral float-right" title="DateTime">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="bool-object.html" class="btn btn-neutral" title="BooleanObject"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Typing/Types is licensed under the <a href='https://github.com/PhpTyping/types/blob/master/LICENSE'>MIT license</a></p>
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/PhpTyping/types-documentation/" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="bool-object.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="date-time.html" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Typing/Types documentation">
+  <meta name="author" content="Victor Passapera">
+  <link rel="canonical" href="https://php-types.readthedocs.io/en/latest/index.html">
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <title>Typing / Types</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  <link href="css/blockquotes.css" rel="stylesheet" />
+  <link href="css/links.css" rel="stylesheet" />
+  <link href="css/tables.css" rel="stylesheet" />
+  <link href="css/texts.css" rel="stylesheet" />
+  <link href="css/body.css" rel="stylesheet" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Home";
+    var mkdocs_page_input_path = "index.md";
+    var mkdocs_page_url = "/en/latest/index.html";
+  </script>
+  
+  <script src="js/jquery-2.1.1.min.js" defer></script>
+  <script src="js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="index.html" class="icon icon-home"> Typing / Types</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="index.html">Home</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#optional">Optional</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#features">Features</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#to-do">To Do</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#what-is-boxing-and-how-does-it-work">What is boxing, and how does it work?</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#license">License</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#contact">Contact</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Types</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="types/bool-object.html">BooleanObject</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="types/collection.html">Collection</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="types/date-time.html">DateTime</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="types/enum.html">Enum</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="types/float-object.html">FloatObject</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="types/int-object.html">IntObject</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="types/string-object.html">StringObject</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Typing / Types</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Home</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/PhpTyping/types-documentation/edit/main/docs/index.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="types">Types<a class="headerlink" href="#types" title="Permanent link">&para;</a></h1>
+<p><img align="right" src="https://raw.githubusercontent.com/TheDevNetwork/Aux/master/images/php-types.png"  alt="Typing/Types Logo" width="150px" /></p>
+<p><a href="https://github.com/PhpTyping/types/actions/workflows/build-stable.yaml"><img alt="Build Job" src="https://img.shields.io/endpoint?style=flat-square&amp;url=https://gist.githubusercontent.com/vpassapera/027dcddb6a1dc1995a2a47e528aaf020/raw/build-stable.json" /></a>
+<a href="https://github.com/PhpTyping/types/actions/workflows/continous-patching.yaml"><img alt="Patch Job" src="https://img.shields.io/endpoint?style=flat-square&amp;url=https://gist.githubusercontent.com/vpassapera/d18a6a553c2308b59df916c29ce64eb6/raw/patching.json" /></a>
+<a href="https://github.com/PhpTyping/types-documentation/actions/workflows/build.yaml"><img alt="Documentation" src="https://readthedocs.org/projects/php-types/badge/?version=latest&amp;style=flat-square" /></a>
+<a href="https://packagist.org/packages/typing/types"><img alt="License" src="https://img.shields.io/github/license/PhpTyping/types?style=flat-square" /></a>
+<a href="https://github.com/PhpTyping/Types/issues"><img alt="Issues" src="https://img.shields.io/github/issues/PhpTyping/Types.svg?style=flat-square" /></a>
+<a href="https://packagist.org/packages/typing/types"><img alt="Downloads" src="https://img.shields.io/packagist/dt/typing/types.svg?style=flat-square" /></a>
+<a href="https://packagist.org/packages/typing/types"><img alt="Latest" src="https://img.shields.io/packagist/v/typing/types.svg?style=flat-square" /></a></p>
+<p><a href="https://sonarcloud.io/dashboard?id=PhpTyping-types"><img alt="Quality Gate Status" src="https://sonarcloud.io/api/project_badges/measure?project=PhpTyping-types&amp;metric=alert_status" /></a>
+<a href="https://sonarcloud.io/dashboard?id=PhpTyping-types"><img alt="Maintainability Rating" src="https://sonarcloud.io/api/project_badges/measure?project=PhpTyping-types&amp;metric=sqale_rating" /></a>
+<a href="https://sonarcloud.io/dashboard?id=PhpTyping-types"><img alt="Reliability Rating" src="https://sonarcloud.io/api/project_badges/measure?project=PhpTyping-types&amp;metric=reliability_rating" /></a>
+<a href="https://sonarcloud.io/dashboard?id=PhpTyping-types"><img alt="Security Rating" src="https://sonarcloud.io/api/project_badges/measure?project=PhpTyping-types&amp;metric=security_rating" /></a>
+<a href="https://sonarcloud.io/dashboard?id=PhpTyping-types"><img alt="Bugs" src="https://sonarcloud.io/api/project_badges/measure?project=PhpTyping-types&amp;metric=bugs&amp;style=flat-square" /></a>
+<a href="https://sonarcloud.io/dashboard?id=PhpTyping-types"><img alt="Coverage" src="https://sonarcloud.io/api/project_badges/measure?project=PhpTyping-types&amp;metric=coverage" /></a>
+<a href="https://sonarcloud.io/dashboard?id=PhpTyping-types"><img alt="Duplicated Lines (%)" src="https://sonarcloud.io/api/project_badges/measure?project=PhpTyping-types&amp;metric=duplicated_lines_density" /></a>
+<a href="https://sonarcloud.io/dashboard?id=PhpTyping-types"><img alt="Lines of Code" src="https://sonarcloud.io/api/project_badges/measure?project=PhpTyping-types&amp;metric=ncloc" /></a>
+<a href="https://sonarcloud.io/dashboard?id=PhpTyping-types"><img alt="Technical Debt" src="https://sonarcloud.io/api/project_badges/measure?project=PhpTyping-types&amp;metric=sqale_index" /></a>
+<a href="https://sonarcloud.io/dashboard?id=PhpTyping-types"><img alt="Vulnerabilities" src="https://sonarcloud.io/api/project_badges/measure?project=PhpTyping-types&amp;metric=vulnerabilities" /></a></p>
+<p>Types is a library that provides a collection of useful primitive wrappers, similar to what other languages can do (
+Java, etc). It fixes a few issues some internal functions have, and limits coercion around native PHP functions.</p>
+<hr />
+<p>Below you will find information about the specific types, and the interfaces they expose.</p>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="types/bool-object.html">BooleanObject</a></td>
+<td>bool</td>
+<td>Base wrapper around primitive with some custom logical string keyword mappings.</td>
+</tr>
+<tr>
+<td><a href="types/collection.html">Collection</a></td>
+<td>array</td>
+<td>Analogous to Doctrine collections, and implements same interfaces (including Collection interface), but provides <strong>Typed Collection</strong> functionality.</td>
+</tr>
+<tr>
+<td><a href="types/float-object.html">FloatObject</a></td>
+<td>float</td>
+<td>Provides mathematics functionality, can use 3 different drivers.</td>
+</tr>
+<tr>
+<td><a href="types/int-object.html">IntObject</a></td>
+<td>int</td>
+<td>Provides mathematics functionality, can use 3 different drivers.</td>
+</tr>
+<tr>
+<td><a href="types/string-object.html">StringObject</a></td>
+<td>string</td>
+<td>Extends Stringy using a multi-language inflector and 3rd party slugifier.</td>
+</tr>
+<tr>
+<td><span class="danger-text"><a href="types/enum.html">Enum</a>*</span></td>
+<td>enum</td>
+<td>Extends MyCLabs/Enum and provides a static alias for toArray, syntax sugar for using in attributes.</td>
+</tr>
+<tr>
+<td><a href="types/date-time.html">DateTime</a></td>
+<td>datetime</td>
+<td>Extends Carbon with a custom wrapper that can be automatically cast to an ISO 8601 date timestamp.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition danger">
+<p class="admonition-title">*This class might be deprecated after PHP 8.1</p>
+<p>PHP 8.1 is introducing native Enum structures and this class may no longer be needed.</p>
+</div>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+<p>Using CLI:</p>
+<pre><code class="language-bash">composer require typing/types:*@stable
+</code></pre>
+<p>Or directly on the <code>composer.json</code> file:</p>
+<pre><code class="language-json">{
+    &quot;require&quot;: {
+        &quot;typing/types&quot;: &quot;*@stable&quot;
+    }
+}
+</code></pre>
+<p>See https://getcomposer.org/ for more information and documentation.</p>
+<h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>PHP &gt;= 8.0</code></li>
+</ul>
+<h3 id="optional">Optional<a class="headerlink" href="#optional" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://secure.php.net/manual/en5/book.bc.php">PHP bcmath</a></li>
+<li><a href="https://secure.php.net/manual/en/book.gmp.php">PHP gmp</a></li>
+</ul>
+<h2 id="features">Features<a class="headerlink" href="#features" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Rich interfaces exposing native PHP functions while fixing quirks, return values, etc.</li>
+<li>Multi-byte support</li>
+<li>Sane transmutation</li>
+<li>Explicit boxing of variable types, with very limited coercion.</li>
+</ul>
+<h3 id="to-do">To Do<a class="headerlink" href="#to-do" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Symfony bundle:<ul>
+<li>Configurable extensions for Math in service container</li>
+</ul>
+</li>
+</ul>
+<h3 id="what-is-boxing-and-how-does-it-work">What is boxing, and how does it work?<a class="headerlink" href="#what-is-boxing-and-how-does-it-work" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>Note: Boxing is just a feature in this library, and not something you <strong>have</strong> to use.</p>
+</blockquote>
+<p>Ever since PHP 7.4 we've been able to have strict variable typing at the class level (properties), and method/function
+level. However, even at the current version (8.0.x) we still cannot have it for variables outside a class, or locally
+when declared within class methods. This <a href="https://stitcher.io/blog/what-php-can-be">blog post</a> shows examples of how PHP's type system is weak, even
+when <code>declare(strict_types=1);</code> is called.</p>
+<p>There are 2 approaches to boxing. You can start with a primitive, and box it to a type, or start with a type and keep a
+variable boxed into that type.</p>
+<p><strong>Examples</strong>:</p>
+<p>Starting as a type...</p>
+<pre><code class="language-php">$myString = new StringObject('');
+StringObject::box($myString);
+$myString = 'my_new_value'; // This is still an instance of StringObject.
+$myString-&gt;dasherize(); // my-new-value
+$myString = new stdClass(); // TypeError.
+</code></pre>
+<p>Starting as a primitive...</p>
+<pre><code class="language-php">$myString = 'This is my string, there are many like it, but this one is mine.';
+StringObject::box($myString);
+assert($myString instanceof StringObject); // true
+$myString-&gt;dasherize(); // this-is-my-string...
+$myString = new stdClass(); // TypeError.
+</code></pre>
+<p>In an ideal world, we would do something similar to typescript, or python and the language would auto-box:</p>
+<p>Error:</p>
+<pre><code class="language-php">$myString: StringObject = new StringObject();
+$myString = new stdClass(); // TypeError
+</code></pre>
+<p>Auto:</p>
+<pre><code class="language-php">$myString: StringObject = new StringObject('noop');
+$myString = 'fooBarBaz';
+echo $myString-&gt;dasherize(); //foo-bar-baz
+</code></pre>
+<h2 id="license">License<a class="headerlink" href="#license" title="Permanent link">&para;</a></h2>
+<p>This library is released under the MIT license. See the complete license in the <a href="license.html">LICENSE</a> file.</p>
+<h2 id="contact">Contact<a class="headerlink" href="#contact" title="Permanent link">&para;</a></h2>
+<p>Use the buttons below for issues regarding the library.</p>
+<p><a href="https://github.com/phptyping/types/issues/new"><button class="btn btn-primary btn-lg" type="submit">Report
+Issue</button></a> <a href="https://github.com/phptyping/types/issues"><button class="btn btn-primary btn-lg" type="submit">
+Active Issues</button></a></p>
+<p>For other issues, reach out to vpassapera [at] linkedin [dot] com.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="types/bool-object.html" class="btn btn-neutral float-right" title="BooleanObject">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Typing/Types is licensed under the <a href='https://github.com/PhpTyping/types/blob/master/LICENSE'>MIT license</a></p>
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/PhpTyping/types-documentation/" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+    
+      <span><a href="types/bool-object.html" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '.';</script>
+    <script src="js/theme_extra.js" defer></script>
+    <script src="js/theme.js" defer></script>
+      <script src="search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
+
+<!--
+MkDocs version : 1.2.1
+Build Date UTC : 2021-06-16 10:50:04.203775+00:00
+-->
