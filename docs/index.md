@@ -2,8 +2,8 @@
 <img align="right" src="https://raw.githubusercontent.com/TheDevNetwork/Aux/master/images/php-types.png"  alt="Typing/Types Logo" width="150px" />
 
 [![Build Job][github-stable-build-shield]][github stable build]
-[![Integration Job][github-int-build-shield]][github integration build]
-[![Documentation][rtd-doc-shield]][rtd doc link]
+[![Patch Job][github-patch-shield]][github patch build]
+[![Documentation][rtd-doc-shield]][documentation build link]
 [![License][github-license-shield]][packagist page]
 [![Issues][github-issues-shield]][github issues page]
 [![Downloads][pkgist-dls-shield]][packagist page]
@@ -156,16 +156,16 @@ For other issues, reach out to vpassapera [at] linkedin [dot] com.
 [Enum]: ./types/enum.md
 [DateTime]: types/date-time.md
 [blog post]: https://stitcher.io/blog/what-php-can-be
-[rtd doc link]: https://php-types.readthedocs.io/en/latest/?badge=latest
+[documentation build link]: https://github.com/PhpTyping/types-documentation/actions/workflows/build.yaml
 [sonar page]: https://sonarcloud.io/dashboard?id=PhpTyping-types
 [packagist page]: https://packagist.org/packages/typing/types
 [github issues page]: https://github.com/PhpTyping/Types/issues
 [github stable build]: https://github.com/PhpTyping/types/actions/workflows/build-stable.yaml
-[github integration build]: https://github.com/PhpTyping/types/actions/workflows/build-integration.yaml
+[github patch build]: https://github.com/PhpTyping/types/actions/workflows/continous-patching.yaml
 [github-issues-shield]: https://img.shields.io/github/issues/PhpTyping/Types.svg?style=flat-square
 [github-license-shield]: https://img.shields.io/github/license/PhpTyping/types?style=flat-square
 [github-stable-build-shield]: https://img.shields.io/endpoint?style=flat-square&url=https://gist.githubusercontent.com/vpassapera/027dcddb6a1dc1995a2a47e528aaf020/raw/build-stable.json
-[github-int-build-shield]: https://img.shields.io/endpoint?style=flat-square&url=https://gist.githubusercontent.com/vpassapera/73b13bfc6a004696c00552deb44b9e40/raw/build-integration.json
+[github-patch-shield]: https://img.shields.io/endpoint?style=flat-square&url=https://gist.githubusercontent.com/vpassapera/d18a6a553c2308b59df916c29ce64eb6/raw/patching.json
 [pkgist-dls-shield]: https://img.shields.io/packagist/dt/typing/types.svg?style=flat-square
 [pkgist-version-shield]: https://img.shields.io/packagist/v/typing/types.svg?style=flat-square
 [rtd-doc-shield]: https://readthedocs.org/projects/php-types/badge/?version=latest&style=flat-square
